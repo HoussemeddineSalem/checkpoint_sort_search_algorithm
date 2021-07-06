@@ -9,24 +9,24 @@ BEGIN
 
     REPEAT
         write ("Please enter the length of the array");
-        read (n)
+        read (n);
     UNTIL (n >= 0)
 
     FOR i FROM 0 TO  n-1 STEP 1  DO
         Read (arr[i]);
     END_FOR
 
-    FOR i FROM 1 TO n STEP 1  DO
-        aux := arr[i];
-        j := i -1;
+        FOR i FROM 1 TO n-1 STEP 1  DO
+            aux := arr[i];
+            j := i - 1;
 
-        WHILE (j >= 0 AND arr[j] > key) DO
+            WHILE (j >= 0 AND arr[j] > aux) DO
 
-            arr[j + 1] := arr[j];
-            j := j - 1;
+               arr[j + 1] := arr[j];
+               j := j - 1;
 
-        END_WHILE
-     arr[ j + 1 ] = aux;
-    END_FOR 
+            END_WHILE
+          arr[ j + 1 ] = aux;
+        END_FOR 
 END
 
